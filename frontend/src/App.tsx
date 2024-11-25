@@ -17,6 +17,7 @@ import LandingPage from "./Pages/Auth/landingPage";
 import JobQuestionnaire from "./Pages/CreateJob/jobQuestionnaire";
 import JobPreview from "./Pages/CreateJob/jobPreview";
 import SaveJobs from "./Pages/SaveJobs/SaveJobs";
+import SuperAdminPage from "./Pages/Auth/superAdminPage";
 
 const App = () => {
   return (
@@ -25,6 +26,14 @@ const App = () => {
         <Header />
         <ToastContainer style={{ marginTop: "64px" }} />
         <Routes>
+
+          <Route path="/add_manager" 
+            element={
+            <ProtectedRoute>
+              <SuperAdminPage/>
+            </ProtectedRoute> 
+            } 
+          />
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<LogoutPage />} />

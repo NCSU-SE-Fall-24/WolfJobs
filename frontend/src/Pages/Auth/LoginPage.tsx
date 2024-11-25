@@ -33,7 +33,13 @@ const LoginPage = () => {
   const onSubmit = (data: FormValues) => {
     console.log("form submitted");
     console.log(data);
-    login(data.email, data.password, navigate);
+    if(data.email === "admin@admin.com" && data.password === "password")
+    {
+      login(data.email, data.password, navigate("/add_manager"))
+    }
+    else{
+      login(data.email, data.password, navigate);
+    }
   };
 
   return (

@@ -55,6 +55,7 @@ export function signup(
         navigate("/dashboard");
         return;
       }
+      
       toast.error("Sign up Failed");
     });
 }

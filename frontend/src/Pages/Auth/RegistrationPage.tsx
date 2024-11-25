@@ -164,7 +164,7 @@ const RegistrationPage = () => {
                   },
                 }}
               />
-              <FormControl>
+              {/* <FormControl>
                 <InputLabel id="role-id">Role</InputLabel>
                 <Select
                   value={role}
@@ -178,31 +178,34 @@ const RegistrationPage = () => {
                   <MenuItem value={"Manager"}>Manager</MenuItem>
                   <MenuItem value={"Applicant"}>Applicant</MenuItem>
                 </Select>
-              </FormControl>
-              {role === "Manager" && (
-                <FormControl>
-                  <InputLabel id="affiliation-id">Role</InputLabel>
-                  <Select
-                    value={affilation}
-                    labelId="affiliation-id"
-                    label="Role"
-                    id="role"
-                    onChange={(e: SelectChangeEvent) => {
-                      setAffiliation(e.target.value);
-                    }}
-                  >
-                    <MenuItem value={"nc-state-dining"}>
-                      NC State Dining
-                    </MenuItem>
-                    <MenuItem value={"campus-enterprises"}>
-                      Campus Enterprises
-                    </MenuItem>
-                    <MenuItem value={"wolfpack-outfitters"}>
-                      Wolfpack Outfitters
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              )}
+              </FormControl> */}
+              
+              {/* {
+                role === "Manager" && (
+                  <FormControl>
+                    <InputLabel id="affiliation-id">Role</InputLabel>
+                    <Select
+                      value={affilation}
+                      labelId="affiliation-id"
+                      label="Role"
+                      id="role"
+                      onChange={(e: SelectChangeEvent) => {
+                        setAffiliation(e.target.value);
+                      }}
+                    >
+                      <MenuItem value={"nc-state-dining"}>
+                        NC State Dining
+                      </MenuItem>
+                      <MenuItem value={"campus-enterprises"}>
+                        Campus Enterprises
+                      </MenuItem>
+                      <MenuItem value={"wolfpack-outfitters"}>
+                        Wolfpack Outfitters
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
+                )
+              } */}
               <Button
                 type="submit"
                 variant="contained"
