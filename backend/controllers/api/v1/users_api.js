@@ -11,8 +11,7 @@ require("dotenv").config();
 module.exports.createSession = async function (req, res) {
   try {
     let user = await User.findOne({ email: req.body.email });
-    console.log("********", user);
-    const filterUserObject = {
+     const filterUserObject = {
       email: user.email,
       name: user.name,
       role: user.role,
@@ -20,17 +19,16 @@ module.exports.createSession = async function (req, res) {
       isVerified: user.isVerified,
 
     }
-    res.set("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     if (!user || user.password != req.body.password) {
       return res.json(422, {
         message: "Invalid username or password",
       });
     }
-    res.set("Access-Control-Allow-Origin", "*");
     return res.json(200, {
       message: "Sign In Successful, here is your token, please keep it safe",
       data: {
-        token: jwt.sign(filterUserObject, "wolfjobs", { expiresIn: "100000" }),
+        token: jwt.sign(filterUserObject, "wolfjobs", { expiresIn: 24 * 60 * 60 * 5 }),
         user: filterUserObject,
       },
       success: true,
@@ -315,18 +313,56 @@ module.exports.createJob = async function (req, res) {
   }
 };
 
-module.exports.index = async function (req, res) {
-  let jobs = await Job.find({}).sort("-createdAt");
+module.exports.getUsers = async function (req, res) {
+  let users = await User.find({}).sort("-createdAt");
 
   //Whenever we want to send back JSON data
   res.set("Access-Control-Allow-Origin", "*");
   return res.json(200, {
-    message: "List of jobs",
+    message: "List of users",
 
-    jobs: jobs,
+    users: users,
   });
 };
 
+module.exports.createUser = async function (req, res) {
+  let user = await User.create(req.body);
+
+  //Whenever we want to send back JSON data
+  res.set("Access-Control-Allow-Origin", "*");
+  return res.json(201, {
+    message: "User Created",
+    user: user,
+  });
+}
+
+module.exports.updateUser = async function (req, res) {
+  const update = {};
+  for (const key of Object.keys(req.body)){
+      if (req.body[key] !== '') {
+          update[key] = req.body[key];
+      }
+  }
+  console.log(update);  
+  let user = await User.findOneAndUpdate({ _id: req.params.id },{$set: update}, {new: true})
+  
+  //Whenever we want to send back JSON data
+  res.set("Access-Control-Allow-Origin", "*");
+  return res.json(200, {
+    message: "User Updated",
+    user: user,
+  });
+}
+
+module.exports.deleteUser = async function (req, res) {
+
+  await User.deleteOne({ _id: req.params.id });
+  //Whenever we want to send back JSON data
+  res.set("Access-Control-Allow-Origin", "*");
+  return res.json(200, {
+    message: "User Deleted",
+  });
+}
 module.exports.fetchApplication = async function (req, res) {
   let application = await Application.find({}).sort("-createdAt");
 
