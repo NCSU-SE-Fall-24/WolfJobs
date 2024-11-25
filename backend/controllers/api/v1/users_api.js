@@ -1,7 +1,5 @@
 const User = require("../../../models/user");
 const jwt = require("jsonwebtoken");
-const Food = require("../../../models/food");
-const History = require("../../../models/history");
 const Job = require("../../../models/job");
 const Application = require("../../../models/application");
 const AuthOtp = require("../../../models/authOtp");
@@ -36,32 +34,6 @@ module.exports.createSession = async function (req, res) {
   }
 };
 
-module.exports.createHistory = async function (req, res) {
-  try {
-    let history = await History.create({
-      date: req.body.date,
-      caloriesgain: req.body.total,
-      caloriesburn: req.body.burnout,
-      user: req.body.id,
-    });
-
-    res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
-      message: "History Created Successfully",
-
-      data: {
-        history: history,
-      },
-      success: true,
-    });
-  } catch (err) {
-    console.log(err);
-
-    return res.json(500, {
-      message: "Internal Server Error",
-    });
-  }
-};
 
 // module.exports.signUp = async function (req, res) {
 //   try {
@@ -293,32 +265,7 @@ module.exports.searchUser = async function (req, res) {
   }
 };
 
-module.exports.getHistory = async function (req, res) {
-  try {
-    let history = await History.findOne({
-      user: req.query.id,
-      date: req.query.date,
-    });
-    res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
-      message: "The User Profile",
 
-      data: {
-        //user.JSON() part gets encrypted
-
-        // token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
-        history: history,
-      },
-      success: true,
-    });
-  } catch (err) {
-    console.log(err);
-
-    return res.json(500, {
-      message: "Internal Server Error",
-    });
-  }
-};
 
 module.exports.createJob = async function (req, res) {
   let user = await User.findOne({ _id: req.body.id });
