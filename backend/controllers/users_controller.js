@@ -15,7 +15,7 @@ module.exports.signUp = function(req,res){
 
 
     return res.render('user_sign_up',{
-        title: "CalorieApp | Sign Up"
+        title: "WolfJobs | Sign Up"
     })
 }
 
@@ -27,7 +27,7 @@ module.exports.signIn = function(req,res){
 
 
     return res.render('user_sign_in',{
-        title: "CalorieApp | Sign In"
+        title: "WolfJobs | Sign In"
     })
 }
 

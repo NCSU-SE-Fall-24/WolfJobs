@@ -40,7 +40,7 @@ app.set("views", "./views");
 
 app.use(
   session({
-    name: "caloriesapp",
+    name: "wolfjobs",
     //TODO change the secret before deployment in production mode
     secret: "blahsomething",
     saveUninitialized: false,

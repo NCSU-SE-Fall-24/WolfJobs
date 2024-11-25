@@ -11,6 +11,15 @@ require("dotenv").config();
 module.exports.createSession = async function (req, res) {
   try {
     let user = await User.findOne({ email: req.body.email });
+    console.log("********", user);
+    const filterUserObject = {
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      id: user._id,
+      isVerified: user.isVerified,
+
+    }
     res.set("Access-Control-Allow-Origin", "*");
     if (!user || user.password != req.body.password) {
       return res.json(422, {
@@ -21,8 +30,8 @@ module.exports.createSession = async function (req, res) {
     return res.json(200, {
       message: "Sign In Successful, here is your token, please keep it safe",
       data: {
-        token: jwt.sign(user.toJSON(), "caloriesapp", { expiresIn: "100000" }),
-        user: user,
+        token: jwt.sign(filterUserObject, "wolfjobs", { expiresIn: "100000" }),
+        user: filterUserObject,
       },
       success: true,
     });
@@ -52,7 +61,7 @@ module.exports.createSession = async function (req, res) {
 //           data: {
 //             //user.JSON() part gets encrypted
 
-//             token: jwt.sign(user.toJSON(), "caloriesapp", {
+//             token: jwt.sign(user.toJSON(), "wolfjobs", {
 //               expiresIn: "100000",
 //             }),
 //             user,
@@ -77,7 +86,7 @@ module.exports.createSession = async function (req, res) {
 //             data: {
 //               //user.JSON() part gets encrypted
 
-//               token: jwt.sign(user.toJSON(), "caloriesapp", {
+//               token: jwt.sign(user.toJSON(), "wolfjobs", {
 //                 expiresIn: "100000",
 //               }),
 //               user,
@@ -114,7 +123,7 @@ module.exports.signUp = async function (req, res) {
         return res.json(200, {
           message: "Sign Up Successful, here is your token, please keep it safe",
           data: {
-            token: jwt.sign(user.toJSON(), "caloriesapp", {
+            token: jwt.sign(user.toJSON(), "wolfjobs", {
               expiresIn: "100000",
             }),
             user,
@@ -140,7 +149,7 @@ module.exports.signUp = async function (req, res) {
           return res.json(200, {
             message: "Sign Up Successful, here is your token, please keep it safe",
             data: {
-              token: jwt.sign(user.toJSON(), "caloriesapp", {
+              token: jwt.sign(user.toJSON(), "wolfjobs", {
                 expiresIn: "100000",
               }),
               user,
