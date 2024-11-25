@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 
 const jsonParser = bodyParser.json();
 
-router.post("/create-session", usersApi.createSession);
+router.post("/create-session", jsonParser, usersApi.createSession);
 router.post("/signup", usersApi.signUp);
 router.post("/edit", jsonParser, usersApi.editProfile);
 router.get("/getprofile/:id", usersApi.getProfile);
