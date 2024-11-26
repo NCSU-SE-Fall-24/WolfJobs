@@ -1,65 +1,65 @@
-const User = require("../../../models/user");
-const jwt = require("jsonwebtoken");
-const Job = require("../../../models/job");
-const Application = require("../../../models/application");
-const AuthOtp = require("../../../models/authOtp");
+const User = require('../../../models/user');
+const jwt = require('jsonwebtoken');
+const Job = require('../../../models/job');
+const Application = require('../../../models/application');
+const AuthOtp = require('../../../models/authOtp');
 
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 
-require("dotenv").config();
+require('dotenv').config();
 
-module.exports.createSession = async function (req, res) {
+module.exports.createSession = async function(req, res) {
   try {
-    console.log("********", req.body);
-    let user = await User.findOne({ email: req.body.email });
-     const filterUserObject = {
+    console.log('********', req.body);
+    const user = await User.findOne({email: req.body.email});
+    const filterUserObject = {
       email: user.email,
       name: user.name,
       role: user.role,
       id: user._id,
       isVerified: user.isVerified,
 
-    }
-    console.log("********", user);
-    console.log("********", filterUserObject);
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    };
+    console.log('********', user);
+    console.log('********', filterUserObject);
+    res.setHeader('Access-Control-Allow-Origin', '*');
     if (!user || user.password != req.body.password) {
       return res.status(422).json({
-        message: "Invalid username or password",
+        message: 'Invalid username or password',
       });
     }
     return res.status(200).json({
-      message: "Sign In Successful, here is your token, please keep it safe",
+      message: 'Sign In Successful, here is your token, please keep it safe',
       data: {
-        token: jwt.sign(filterUserObject, "wolfjobs", { expiresIn: 24 * 60 * 60 * 5 }),
+        token: jwt.sign(filterUserObject, 'wolfjobs', {expiresIn: 24 * 60 * 60 * 5}),
         user: filterUserObject,
       },
       success: true,
     });
   } catch (err) {
-    console.log("*******", err);
+    console.log('*******', err);
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.signUp = async function (req, res) {
+module.exports.signUp = async function(req, res) {
   try {
     if (req.body.password != req.body.confirm_password) {
       return res.json(422, {
-        message: "Passwords do not match",
+        message: 'Passwords do not match',
       });
     }
 
-    User.findOne({ email: req.body.email }, function (err, user) {
+    User.findOne({email: req.body.email}, function(err, user) {
       if (user) {
-        res.set("Access-Control-Allow-Origin", "*");
+        res.set('Access-Control-Allow-Origin', '*');
         return res.json(200, {
-          message: "Sign Up Successful, here is your token, please keep it safe",
+          message: 'Sign Up Successful, here is your token, please keep it safe',
           data: {
-            token: jwt.sign(user.toJSON(), "wolfjobs", {
-              expiresIn: "100000",
+            token: jwt.sign(user.toJSON(), 'wolfjobs', {
+              expiresIn: '100000',
             }),
             user,
           },
@@ -70,22 +70,22 @@ module.exports.signUp = async function (req, res) {
       if (!user) {
         // Convert skills from a comma-separated string to an array of strings if it's provided as a string.
         if (typeof req.body.skills === 'string') {
-          req.body.skills = req.body.skills.split(",").map(skill => skill.trim());
+          req.body.skills = req.body.skills.split(',').map((skill) => skill.trim());
         }
 
-        let user = User.create(req.body, function (err, user) {
+        User.create(req.body, function(err, user) {
           if (err) {
             return res.json(500, {
-              message: "Internal Server Error",
+              message: 'Internal Server Error',
             });
           }
 
-          res.set("Access-Control-Allow-Origin", "*");
+          res.set('Access-Control-Allow-Origin', '*');
           return res.status(200).json({
-            message: "Sign Up Successful, here is your token, please keep it safe",
+            message: 'Sign Up Successful, here is your token, please keep it safe',
             data: {
-              token: jwt.sign(user.toJSON(), "wolfjobs", {
-                expiresIn: "100000",
+              token: jwt.sign(user.toJSON(), 'wolfjobs', {
+                expiresIn: '100000',
               }),
               user,
             },
@@ -94,7 +94,7 @@ module.exports.signUp = async function (req, res) {
         });
       } else {
         return res.json(500, {
-          message: "Internal Server Error",
+          message: 'Internal Server Error',
         });
       }
     });
@@ -102,22 +102,22 @@ module.exports.signUp = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.getProfile = async function (req, res) {
+module.exports.getProfile = async function(req, res) {
   try {
-    let user = await User.findById(req.params.id);
-    res.set("Access-Control-Allow-Origin", "*");
+    const user = await User.findById(req.params.id);
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "The User info is",
+      message: 'The User info is',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
+        // token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
         user: user,
       },
       success: true,
@@ -126,15 +126,15 @@ module.exports.getProfile = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.editProfile = async function (req, res) {
+module.exports.editProfile = async function(req, res) {
   // if (req.body.password == req.body.confirm_password) {
   try {
-    let user = await User.findById(req.body.id);
+    const user = await User.findById(req.body.id);
 
     user.name = req.body.name;
     user.password = req.body.password;
@@ -149,18 +149,18 @@ module.exports.editProfile = async function (req, res) {
     user.skills = check;
 
     if (typeof req.body.skills === 'string') {
-      user.skills = req.body.skills.split(",").map(skill => skill.trim());
+      user.skills = req.body.skills.split(',').map((skill) => skill.trim());
     } else {
       user.skills = req.body.skills;
     }
 
     await user.save();
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "User is updated Successfully",
+      message: 'User is updated Successfully',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
         // token: jwt.sign(user.toJSON(), env.jwt_secret, {
         //   expiresIn: "100000",
@@ -173,7 +173,7 @@ module.exports.editProfile = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
   // } else {
@@ -183,19 +183,19 @@ module.exports.editProfile = async function (req, res) {
   // }
 };
 
-module.exports.searchUser = async function (req, res) {
+module.exports.searchUser = async function(req, res) {
   try {
-    var regex = new RegExp(req.params.name, "i");
+    const regex = new RegExp(req.params.name, 'i');
 
-    let users = await Job.find({ name: regex });
-    res.set("Access-Control-Allow-Origin", "*");
+    const users = await Job.find({name: regex});
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "The list of Searched Users",
+      message: 'The list of Searched Users',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
+        // token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
         users: users,
       },
       success: true,
@@ -204,21 +204,20 @@ module.exports.searchUser = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
 
+module.exports.createJob = async function(req, res) {
+  const user = await User.findOne({_id: req.body.id});
+  console.log('Incoming skills:', req.body.skills);
 
-module.exports.createJob = async function (req, res) {
-  let user = await User.findOne({ _id: req.body.id });
-  console.log("Incoming skills:", req.body.skills);
-
-  let skills = req.body.skills ? req.body.skills.split(",").map(skill => skill.trim()) : []; // Split skills string into an array
+  const skills = req.body.skills ? req.body.skills.split(',').map((skill) => skill.trim()) : []; // Split skills string into an array
   check = req.body.skills;
   try {
-    let job = await Job.create({
+    const job = await Job.create({
       name: req.body.name,
       managerid: user._id,
       managerAffilication: user.affiliation,
@@ -232,87 +231,86 @@ module.exports.createJob = async function (req, res) {
       question3: req.body.question3,
       question4: req.body.question4,
     });
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
       data: {
         job: job,
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
+        // token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
       },
-      message: "Job Created!!",
+      message: 'Job Created!!',
       success: true,
     });
   } catch (err) {
     console.log(err);
 
     return res.json(500, {
-      message: "NOT CREATED",
+      message: 'NOT CREATED',
     });
   }
 };
 
-module.exports.getUsers = async function (req, res) {
-  let users = await User.find({}).sort("-createdAt");
+module.exports.getUsers = async function(req, res) {
+  const users = await User.find({}).sort('-createdAt');
 
-  //Whenever we want to send back JSON data
-  res.set("Access-Control-Allow-Origin", "*");
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
   return res.json(200, {
-    message: "List of users",
+    message: 'List of users',
 
     users: users,
   });
 };
 
-module.exports.createUser = async function (req, res) {
-  let user = await User.create(req.body);
+module.exports.createUser = async function(req, res) {
+  const user = await User.create(req.body);
 
-  //Whenever we want to send back JSON data
-  res.set("Access-Control-Allow-Origin", "*");
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
   return res.json(201, {
-    message: "User Created",
+    message: 'User Created',
     user: user,
   });
-}
+};
 
-module.exports.updateUser = async function (req, res) {
+module.exports.updateUser = async function(req, res) {
   const update = {};
-  for (const key of Object.keys(req.body)){
-      if (req.body[key] !== '') {
-          update[key] = req.body[key];
-      }
+  for (const key of Object.keys(req.body)) {
+    if (req.body[key] !== '') {
+      update[key] = req.body[key];
+    }
   }
-  console.log(update);  
-  let user = await User.findOneAndUpdate({ _id: req.params.id },{$set: update}, {new: true})
-  
-  //Whenever we want to send back JSON data
-  res.set("Access-Control-Allow-Origin", "*");
+  console.log(update);
+  const user = await User.findOneAndUpdate({_id: req.params.id}, {$set: update}, {new: true});
+
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
   return res.json(200, {
-    message: "User Updated",
+    message: 'User Updated',
     user: user,
   });
-}
+};
 
-module.exports.deleteUser = async function (req, res) {
-
-  await User.deleteOne({ _id: req.params.id });
-  //Whenever we want to send back JSON data
-  res.set("Access-Control-Allow-Origin", "*");
+module.exports.deleteUser = async function(req, res) {
+  await User.deleteOne({_id: req.params.id});
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
   return res.json(200, {
-    message: "User Deleted",
+    message: 'User Deleted',
   });
-}
-module.exports.fetchApplication = async function (req, res) {
-  let application = await Application.find({}).sort("-createdAt");
+};
+module.exports.fetchApplication = async function(req, res) {
+  const application = await Application.find({}).sort('-createdAt');
 
-  //Whenever we want to send back JSON data
-  res.set("Access-Control-Allow-Origin", "*");
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
   return res.status(200).json({
-    message: "List of Applications",
+    message: 'List of Applications',
 
     application: application,
   });
 };
 
-module.exports.createApplication = async function (req, res) {
+module.exports.createApplication = async function(req, res) {
   // let user = await User.findOne({ _id: req.body.id });
   // check = req.body.skills;
 
@@ -323,16 +321,16 @@ module.exports.createApplication = async function (req, res) {
     });
 
     if (existingApplication) {
-      res.set("Access-Control-Allow-Origin", "*");
+      res.set('Access-Control-Allow-Origin', '*');
       return res.json(400, {
-        message: "You have already applied for the job",
+        message: 'You have already applied for the job',
         error: true,
       });
     }
 
-    let application = await Application.create({
+    const application = await Application.create({
       // applicantemail: req.body.applicantemail,
-      
+
       applicantid: req.body.applicantid,
       applicantname: req.body.applicantname,
       applicantemail: req.body.applicantemail,
@@ -346,45 +344,45 @@ module.exports.createApplication = async function (req, res) {
       jobid: req.body.jobid,
       managerid: req.body.managerid,
     });
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
       data: {
         application: application,
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
+        // token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
       },
-      message: "Job Created!!",
+      message: 'Job Created!!',
       success: true,
     });
   } catch (err) {
     console.log(err);
 
     return res.json(500, {
-      message: "NOT CREATED",
+      message: 'NOT CREATED',
     });
   }
 };
 
-module.exports.modifyApplication = async function (req, res) {
+module.exports.modifyApplication = async function(req, res) {
   try {
-    let application = await Application.findById(req.body.applicationId);
+    const application = await Application.findById(req.body.applicationId);
 
     application.status = req.body.status;
 
-    //change answer only from screening to grading
-    if (req.body.status === "grading") {
+    // change answer only from screening to grading
+    if (req.body.status === 'grading') {
       application.answer1 = req.body.answer1;
       application.answer2 = req.body.answer2;
       application.answer3 = req.body.answer3;
       application.answer4 = req.body.answer4;
     }
 
-    if (req.body.status === "rating") {
+    if (req.body.status === 'rating') {
       application.rating = req.body.rating;
     }
     application.save();
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "Application is updated Successfully",
+      message: 'Application is updated Successfully',
       data: {
         application,
       },
@@ -394,24 +392,24 @@ module.exports.modifyApplication = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.acceptApplication = async function (req, res) {
+module.exports.acceptApplication = async function(req, res) {
   try {
-    let application = await Application.findById(req.body.applicationId);
+    const application = await Application.findById(req.body.applicationId);
 
-    application.status = "1";
+    application.status = '1';
 
     application.save();
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "Application is updated Successfully",
+      message: 'Application is updated Successfully',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
         // token: jwt.sign(user.toJSON(), env.jwt_secret, {
         //   expiresIn: "100000",
@@ -424,24 +422,24 @@ module.exports.acceptApplication = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.rejectApplication = async function (req, res) {
+module.exports.rejectApplication = async function(req, res) {
   try {
-    let application = await Application.findById(req.body.applicationId);
+    const application = await Application.findById(req.body.applicationId);
 
-    application.status = "2";
+    application.status = '2';
 
     application.save();
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "Application is updated Successfully",
+      message: 'Application is updated Successfully',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
         // token: jwt.sign(user.toJSON(), env.jwt_secret, {
         //   expiresIn: "100000",
@@ -454,24 +452,24 @@ module.exports.rejectApplication = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.closeJob = async function (req, res) {
+module.exports.closeJob = async function(req, res) {
   try {
-    let job = await Job.findById(req.body.jobid);
+    const job = await Job.findById(req.body.jobid);
 
-    job.status = "closed";
+    job.status = 'closed';
 
     job.save();
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
-      message: "Job is updated Successfully",
+      message: 'Job is updated Successfully',
 
       data: {
-        //user.JSON() part gets encrypted
+        // user.JSON() part gets encrypted
 
         // token: jwt.sign(user.toJSON(), env.jwt_secret, {
         //   expiresIn: "100000",
@@ -484,14 +482,18 @@ module.exports.closeJob = async function (req, res) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
+/**
+ * Creates and returns a nodemailer transport object.
+ * @return {object} Nodemailer transport object.
+ */
 function getTransport() {
   return nodemailer.createTransport({
-    service: "gmail",
+    service: 'gmail',
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASS,
@@ -500,40 +502,40 @@ function getTransport() {
 }
 
 // Generate OTP ans send email to user
-module.exports.generateOtp = async function (req, res) {
+module.exports.generateOtp = async function(req, res) {
   const otp = Math.floor(100000 + Math.random() * 900000);
   try {
-    let authOtp = await AuthOtp.create({
+    await AuthOtp.create({
       userId: req.body.userId,
       otp: otp,
     });
 
-    const { email } = await User.findById(req.body.userId);
+    const {email} = await User.findById(req.body.userId);
     // Send mail to user
     const mailOptions = {
-      from: '"Job Portal" <' + process.env.EMAIL + ">", // sender address
+      from: '"Job Portal" <' + process.env.EMAIL + '>', // sender address
       to: email, // list of receivers
-      subject: "OTP", // Subject line
+      subject: 'OTP', // Subject line
       html: `<p>Your OTP is ${otp}</p>`, // plain text body
     };
 
     await getTransport().sendMail(mailOptions);
 
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
       success: true,
-      message: "OTP is generated Successfully",
+      message: 'OTP is generated Successfully',
     });
   } catch (err) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
 
-module.exports.verifyOtp = async function (req, res) {
+module.exports.verifyOtp = async function(req, res) {
   try {
     const authOtp = await AuthOtp.findOne({
       userId: req.body.userId,
@@ -543,38 +545,38 @@ module.exports.verifyOtp = async function (req, res) {
     if (!authOtp) {
       return res.json(422, {
         error: true,
-        message: "OTP is not correct",
+        message: 'OTP is not correct',
       });
     }
 
     authOtp.remove();
 
     await User.updateOne(
-      { _id: req.body.userId },
-      { $set: { isVerified: true } }
+        {_id: req.body.userId},
+        {$set: {isVerified: true}},
     );
 
-    res.set("Access-Control-Allow-Origin", "*");
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json(200, {
       success: true,
-      message: "OTP is verified Successfully",
+      message: 'OTP is verified Successfully',
     });
   } catch (err) {
     console.log(err);
 
     return res.json(500, {
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
     });
   }
 };
-module.exports.saveJob = async function (req, res) {
+module.exports.saveJob = async function(req, res) {
   try {
-    const { userId, jobId } = req.body;
+    const {userId, jobId} = req.body;
     const user = await User.findById(userId);
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found",
+        message: 'User not found',
         success: false,
       });
     }
@@ -588,7 +590,7 @@ module.exports.saveJob = async function (req, res) {
       await user.populate('savedJobs');
 
       return res.status(200).json({
-        message: "Job saved successfully",
+        message: 'Job saved successfully',
         success: true,
         data: user.savedJobs,
       });
@@ -596,7 +598,7 @@ module.exports.saveJob = async function (req, res) {
       await user.populate('savedJobs');
 
       return res.status(200).json({
-        message: "List of saved jobs retrieved successfully",
+        message: 'List of saved jobs retrieved successfully',
         success: true,
         data: user.savedJobs,
       });
@@ -604,38 +606,38 @@ module.exports.saveJob = async function (req, res) {
   } catch (err) {
     console.error(err);
     return res.status(500).json({
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
       error: err.message,
       success: false,
     });
   }
 };
 
-module.exports.unsaveJob = async function (req, res) {
+module.exports.unsaveJob = async function(req, res) {
   try {
-    const { userId, jobId } = req.body;
+    const {userId, jobId} = req.body;
     const user = await User.findById(userId);
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found",
+        message: 'User not found',
         success: false,
       });
     }
 
-    user.savedJobs = user.savedJobs.filter(id => id != jobId);
+    user.savedJobs = user.savedJobs.filter((id) => id != jobId);
     await user.save();
     await user.populate('savedJobs');
 
     return res.status(200).json({
-      message: "Job unsaved successfully",
+      message: 'Job unsaved successfully',
       success: true,
       data: user.savedJobs,
     });
   } catch (err) {
     console.error(err);
     return res.status(500).json({
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
       error: err.message,
       success: false,
     });

@@ -4,19 +4,19 @@ const mongoose = require('mongoose');
 const autoOtpSchema = new mongoose.Schema({
   userId: {
     type: String,
-    required: true
+    required: true,
   },
   otp: {
     type: String,
-    required: true
+    required: true,
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
 
