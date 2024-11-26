@@ -19,7 +19,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml)
 [![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Issues](https://img.shields.io/badge/issues-8open-brightorange)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 [![Issues Closed](https://img.shields.io/badge/issues%20closed-7-brightgreen)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 ![last commit](https://img.shields.io/badge/last%20commit-November%202024-blue)
@@ -29,7 +28,6 @@
 [![language_count](https://img.shields.io/github/languages/count/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
 [![Downloads](https://img.shields.io/github/downloads/NCSU-SE-Fall-24/WolfJobs/total)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
 [![Top Language](https://img.shields.io/github/languages/top/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![DOI](https://zenodo.org/badge/879419051.svg)](https://doi.org/10.5281/zenodo.14027438)
 [![Release](https://img.shields.io/github/v/release/NCSU-SE-Fall-24/wolfjobs)](https://gitHub.com/NCSU-SE-Fall-24/WolfJobs)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
