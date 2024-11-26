@@ -17,7 +17,7 @@ import LandingPage from "./Pages/Auth/landingPage";
 import JobQuestionnaire from "./Pages/CreateJob/jobQuestionnaire";
 import JobPreview from "./Pages/CreateJob/jobPreview";
 import SaveJobs from "./Pages/SaveJobs/SaveJobs";
-import SuperAdminPage from "./Pages/Auth/superAdminPage";
+import SuperAdminPage from "./Pages/Auth/SuperAdminPage";
 
 const App = () => {
   return (
