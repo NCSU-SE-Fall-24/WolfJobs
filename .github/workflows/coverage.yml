@@ -1,5 +1,7 @@
 name: Code Coverage
 
+env:
+    MONGO_PASS: ${{ secrets.MONGO_PASS }}
 on:
   push:
     branches: [ dev ]
