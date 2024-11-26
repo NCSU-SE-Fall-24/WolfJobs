@@ -33,9 +33,17 @@ jobs:
         run: |
             touch .env
             echo "${{ secrets.PROD_ENV_FILE }}" > .env
-      - name: Restart pm2
+      - name: Delete existing pm2 service
         working-directory: ./backend
+        continue-on-error: true
         run: |
-            pm2 restart ../dist/bundle.js --name "wolfjobs_backend"
+            pm2 delete wolfjobs_backend
+    
+      - name: Start pm2 service
+        working-directory: ./backend
+        continue-on-error: true
+        run: |
+            pm2 start ./dist/bundle.js --name wolfjobs_backend
+    
 
 
