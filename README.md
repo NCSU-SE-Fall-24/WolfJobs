@@ -192,17 +192,33 @@ Your app is ready to be deployed!
 
 **3. Filtering System in Jobs List** - A filtering system was added in JobsListView, enabling users to filter job listings by type (all, full-time, part-time). This streamlined approach helps applicants locate relevant job types efficiently. Filter buttons are visually distinct, with the active filter highlighted, and useMemo is employed to optimize performance by updating the job list only when necessary.
 
+**4.Cloud Deployment** -  
+WolfJobs is now hosted on the cloud, ensuring seamless access, improved reliability, and scalability to support a growing user base.
+
+**5. Admin Panel Integration** -  
+We’ve implemented a dedicated Admin Panel for managers. This feature allows only authorized managers to post job listings, ensuring a secure and streamlined job posting process.
+
+**6. Email Service Integration** -  
+To enhance user experience, we’ve added an email notification system. Now, whenever a user signs up, they receive a welcome email, ensuring prompt communication and engagement from the very beginning..
+
+
 # Future Improvements✨
 
-**1. Email Service📧** - On getting selected/rejected to a job, the applicant should be getting an email about it.
+**1. Mobile Application Development** - 
+Launch a dedicated mobile app for WolfJobs to provide users with on-the-go access to job postings, notifications, and application tracking. This would increase engagement and accessibility.
 
 **2. Search jobs based on department📃** - There can be a different category searches for applicants when searching for the jobs. For instance, we can have search on basis of the departments.
 
+
+
 **3. Job Analysis🔍** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
 
-**4. Chatbot Integration🤖** – Our platform WolfJobs will also provide the functionality of Chatbot integrated with our website so that user can easily interact with the bot and get to know about various features of our web application and have a nice interactive experience.
+**4. Integration with Academic Portals** – 
+Integrate WolfJobs with university systems like academic records and calendars to create a seamless experience for job seekers and employers within the campus ecosystem.
 
 **5. Interview Appointment Scheduling📆** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
+
+**6. Expanded Job Categories:** - Include diverse job categories beyond campus-focused roles, such as remote internships, freelance projects, and research assistantships, broadening the scope of opportunities available to students
 
 Other future related items can be found in [Issues section.](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 
