@@ -1,0 +1,40 @@
+name: npm-test-upload
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  build-deploy-backend:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout the integration_project_2 branch
+        uses: actions/checkout@v3
+        with:
+          ref: integration_project_2  # Specify the branch name here
+
+      - name: Use Node.js 18x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18x
+          cache: "npm"
+
+      - name: Run install
+        working-directory: ./backend
+        run: |
+          npm install
+
+      - name: Run build
+        working-directory: ./backend
+        run: |
+          npm run build
+
+      - name: Run build
+        working-directory: ./backend
+        run: |
+            touch .env
+            echo "${{ secrets.PROD_ENV_FILE }}" > .env
+            pm2 restart dist/bundle.js --name "wolfjobs_backend"
+
+
