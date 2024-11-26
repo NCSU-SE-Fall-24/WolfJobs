@@ -64,7 +64,7 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/v1/users/fetchapplications")
+      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/fetchapplications")
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Error fetching applications");
@@ -74,7 +74,7 @@ const Explore = () => {
       });
 
     axios
-      .get("http://localhost:8000/api/v1/users", {
+      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users", {
         params: { page: 1, limit: 25 },
       })
       .then((res) => {

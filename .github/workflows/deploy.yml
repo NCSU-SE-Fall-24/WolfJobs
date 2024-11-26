@@ -5,7 +5,7 @@ on:
     branches: ["dev"]
 
 jobs:
-  build-deploy-backend:
+  build-deploy:
     runs-on: self-hosted
 
     steps:
@@ -45,5 +45,19 @@ jobs:
         run: |
             pm2 start ./dist/bundle.js --name wolfjobs_backend
     
+      - name: Install dependency for frontend
+        working-directory: ./frontend
+        run: |
+          npm install
+    
+      - name: Build frontend
+        working-directory: ./frontend
+        run: |
+          npm run build
 
+      - name: Nginx Loading
+        run: |
+          sudo rm -rf /usr/share/nginx/html/*
+          sudo cp -r ./frontend/dist/* /usr/share/nginx/html/
+          sudo systemctl restart nginx
 

@@ -39,7 +39,7 @@ const JobPreview = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
 
-    const url = `http://localhost:8000/api/v1/users/createjob`;
+    const url = `http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createjob`;
     const body = {
       id: userId,
       name: details.role,

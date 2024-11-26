@@ -67,7 +67,7 @@ const ProfileEdit = ({ props }: { props: any }) => {
   const { errors } = formState;
 
   const handleSaveProfile = (data: FormValues) => {
-    const url = "http://localhost:8000/api/v1/users/edit";
+    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/edit";
     const body = {
       id: userId,
       name: data.name,
