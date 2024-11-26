@@ -89,15 +89,15 @@ Situated at the heart of campus life, Wolf Jobs is your trusted partner for dive
 
 # Why WolfJobs?
 
-At WolfJobs, it’s not just about work – it's about joining a vibrant pack where every wolf (err, student!) counts. Step in and find your howl!🐺🎉
+At WolfJobs, it’s more than just work – it’s about becoming part of a vibrant pack where every wolf (that’s you!) has a voice and a place to thrive. Step in, find your rhythm, and let your career journey begin with us! 🐺🎉
 
-- **Competitive & Rewarding:** As part of the WolfJobs family, we pride ourselves on offering competitive wages paired with flexible schedules. Your time is valuable, and we recognize that.
+- **Competitive & Rewarding:** As a member of the WolfJobs family, you’ll enjoy competitive wages and flexible schedules that fit your lifestyle. We understand your time is valuable, and we honor that by offering roles that respect your academic commitments while rewarding your hard work.
 
-- **Holistic Growth & Learning:** With our commitment to fostering a culture rich in learning and opportunity, every job position at WolfJobs paves the way for personal and professional growth.
+- **Holistic Growth & Learning:** At WolfJobs, every position is an opportunity for growth. We’re committed to creating a culture of learning, where each role not only advances your career but also nurtures your personal development. Join us, and embark on a journey of professional and personal transformation.
 
-- **A Confluence of Values:** Our foundation rests on unwavering values: integrity, respect for diversity, responsibility, stewardship, and relentless pursuit of excellence. Every job posted resonates with these ideals, ensuring a harmonious and enriching work environment.
+- **A Confluence of Values:** Our foundation is built on core values: integrity, respect for diversity, responsibility, stewardship, and the relentless pursuit of excellence. These ideals are reflected in every job posted, creating a workplace that is both supportive and empowering
 
-- **Inclusivity & Belonging:** At WolfJobs, every student is a valuable asset. Our emphasis on inclusion ensures that you're not just taking up a job; you're becoming a part of a diverse, dynamic community where your voice matters.
+- **Inclusivity & Belonging:** We believe every student brings unique value. At WolfJobs, diversity is our strength, and inclusivity is at our core. When you join our community, you’re not just taking on a job – you’re becoming a vital part of a dynamic and diverse team where your contributions are celebrated.
 
 # Application Preview:
 
@@ -134,6 +134,9 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ### Review & Accept Applications
 ![Review Applications](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
+
+### Super Admin Panel
+![Super Admin Panel](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Admin.jpg)
 
 
 # Installation Instructions for Project Setup
