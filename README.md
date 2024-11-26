@@ -16,19 +16,37 @@
 [![codecov](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs/graph/badge.svg?token=ZIlENavxph)](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs)
 </div>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml)
-[![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml)
-[![Issues](https://img.shields.io/badge/issues-8open-brightorange)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
-[![Issues Closed](https://img.shields.io/badge/issues%20closed-7-brightgreen)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
-![last commit](https://img.shields.io/badge/last%20commit-November%202024-blue)
-![Lines of Code](https://tokei.rs/b1/github/NCSU-SE-Fall-24/WolfJobs?refresh=true)
-[![Repo-size](https://img.shields.io/github/repo-size/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![file_count](https://img.shields.io/github/directory-file-count/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![language_count](https://img.shields.io/github/languages/count/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![Downloads](https://img.shields.io/github/downloads/NCSU-SE-Fall-24/WolfJobs/total)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![Top Language](https://img.shields.io/github/languages/top/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
-[![Release](https://img.shields.io/github/v/release/NCSU-SE-Fall-24/wolfjobs)](https://gitHub.com/NCSU-SE-Fall-24/WolfJobs)
+
+<p align="center">
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/blob/dev/LICENSE" target="blank">
+<img src="https://img.shields.io/github/license/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" alt="WolfJobs license" />
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/fork" target="blank">
+<img src="https://img.shields.io/github/forks/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" alt="WolfJobs forks"/>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" alt="WolfJobs stars"/>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/issues" target="blank">
+<img src="https://img.shields.io/github/issues/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" alt="WolfJobs issues"/>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/issues" target="blank">
+<img src="https://img.shields.io/github/issues-closed/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge&label=issues%20closed" alt="WolfJobs issues-closed"/>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" alt="WolfJobs pull-requests"/>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/graphs/contributors" alt="WolfJobs Contributors">
+<img src="https://img.shields.io/github/contributors/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" /></a>
+</a>
+<a href="https://github.com/NCSU-SE-Fall-24/WolfJobs/graphs/commit-activity" alt="WolfJobs commit activity">
+<img src="https://img.shields.io/github/commit-activity/w/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" /></a> 
+</a>
+<a href="https://img.shields.io/github/repo-size/NCSU-SE-Fall-24/WolfJobs" alt="WolfJobs repo size">
+<img src="https://img.shields.io/github/repo-size/NCSU-SE-Fall-24/WolfJobs?style=for-the-badge" /></a>
+</a>
+</a>
+</p>
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 
