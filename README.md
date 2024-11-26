@@ -12,8 +12,10 @@
 </h2>
 
 <div align="center">
+
 [![codecov](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs/graph/badge.svg?token=ZIlENavxph)](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs)
 </div>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml)
 [![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml)
