@@ -9,10 +9,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout the integration_project_2 branch
+      - name: Checkout the repo
         uses: actions/checkout@v3
-        with:
-          ref: integration_project_2  # Specify the branch name here
 
       - name: Use Node.js 18x
         uses: actions/setup-node@v3
