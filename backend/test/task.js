@@ -13,88 +13,31 @@ chai.use(chaiHttp);
 describe('Tasks API', () => {
 
     describe("GET /api/v1/users/fetchapplications", () => {
+        it("IT SHOULD RETURN ALL THE APPLICATIONS", async () => {
+            const response = await chai.request('http://localhost:8000').get("/api/v1/users/fetchapplications")
+            response.body.should.be.a('object');
+        })
+    })
 
-        it("IT SHOULD RETURN ALL THE APPLICATIONS", (done) => {
-            // const task = {
-            //     email:'shaangzb@gmail.com',
-            //     password:'123',
-
-            // };
-
-            chai.request('http://localhost:8000')
-                .get("/api/v1/users/fetchapplications")
-
-                .end((err, response) => {
-
-                    response.body.should.be.a('object');
-
-                    console.log('*********', response.body)
-
-
-                    done();
-
-                });
+    describe("GET /api/v1/users/", () => {
+        it("IT SHOULD RETURN ALL THE JOBS", async () => {
+            const response = await chai.request('http://localhost:8000').get("/api/v1/users/")
+            response.body.should.be.a('object');
         })
 
     })
 
     describe("GET /api/v1/users/", () => {
-
-        it("IT SHOULD RETURN ALL THE JOBS", (done) => {
-            // const task = {
-            //     email:'shaangzb@gmail.com',
-            //     password:'123',
-
-            // };
-
-            chai.request('http://localhost:8000')
-                .get("/api/v1/users/")
-
-                .end((err, response) => {
-
-                    response.body.should.be.a('object');
-
-                    console.log('*********', response.body)
-
-
-                    done();
-
-                });
-        })
-
-    })
-
-    describe("GET /api/v1/users/", () => {
-
-        it("IT SHOULD RETURN ALL THE JOBS", (done) => {
-            // const task = {
-            //     email:'shaangzb@gmail.com',
-            //     password:'123',
-
-            // };
-
-            chai.request('http://localhost:8000')
-                .get("/api/v1/users/")
-
-                .end((err, response) => {
-
-                    response.body.should.be.a('object');
-
-                    console.log('*********', response.body)
-
-
-                    done();
-
-                });
+        it("IT SHOULD RETURN ALL THE JOBS", async () => {
+            const response = await chai.request('http://localhost:8000').get("/api/v1/users/")
+            response.body.should.be.a('object');
         })
 
     })
 
     describe("POST /api/v1/users/createjob", () => {
-
-        it("IT SHOULD RETURN THE JOB", (done) => {
+        it("IT SHOULD RETURN THE JOB", async () => {
             const body = {
-
                 name: 'Shaan',
                 managerid: '1234556',
                 skills: 'C,java',
@@ -104,38 +47,14 @@ describe('Tasks API', () => {
                 schedule: '10/10/10',
 
             };
-
-            chai.request('http://localhost:8000')
-                .post("/api/v1/users/createjob")
-                .send({
-                    name: 'Shaan',
-                    managerid: '1234556',
-                    skills: 'C,java',
-                    location: 'Noida',
-                    description: 'xyz',
-                    pay: '10',
-                    schedule: '10/10/10'
-                })
-                .end((err, response) => {
-
-                    response.body.should.be.a('object');
-
-                    console.log('*********', response.body)
-
-
-                    done();
-
-                });
+            const response = await chai.request('http://localhost:8000').post("/api/v1/users/createjob").send(body)
+            response.body.should.be.a('object');
         })
-
     })
-
 
     describe("GET /api/v1/users/search", () => {
-
-        it("IT SHOULD RETURN THE SEARCHED JOB", (done) => {
+        it("IT SHOULD RETURN THE SEARCHED JOB", async () => {
             const body = {
-
                 name: 'Shaan',
                 managerid: '1234556',
                 skills: 'C,java',
@@ -145,25 +64,12 @@ describe('Tasks API', () => {
                 schedule: '10/10/10',
 
             };
-
-            chai.request('http://localhost:8000')
-                .get("/api/v1/users/search/TA")
-                // .send(body)
-                .end((err, response) => {
-
-                    response.body.should.be.a('object');
-
-                    console.log('*********', response.body.users)
-
-
-                    done();
-
-                });
+            const response = await chai.request('http://localhost:8000').get("/api/v1/users/search/TA").send(body)
+            response.body.should.be.a('object');
         })
-
     })
 
-    describe("POST /api/v1/users/create-session", async () => {
+    describe("POST /api/v1/users/create-session", () => {
         it("IT SHOULD RETURN THE USER", async () => {
             const body = {
                 email: 'admin@admin.com',
@@ -171,7 +77,6 @@ describe('Tasks API', () => {
             };
             const response = await chai.request('http://localhost:8000').post("/api/v1/users/create-session").send(body)
             response.body.should.be.a('object');
-            console.log('*********', response.body)
         })
     })
 })
