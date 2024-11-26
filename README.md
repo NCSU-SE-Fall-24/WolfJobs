@@ -48,7 +48,6 @@
 </a>
 </p>
 
-
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 
 # Tech Stack used:
