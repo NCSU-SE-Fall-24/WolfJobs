@@ -1,4 +1,8 @@
-
+<h1 align="center">
+  WolfJobs
+  [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/) 
+  [![DOI](https://zenodo.org/badge/893284742.svg)](https://doi.org/10.5281/zenodo.14219525)
+</h1>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml)
