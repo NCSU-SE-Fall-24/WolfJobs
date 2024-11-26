@@ -10,6 +10,7 @@ require("dotenv").config();
 
 module.exports.createSession = async function (req, res) {
   try {
+    console.log("********", req.body);
     let user = await User.findOne({ email: req.body.email });
      const filterUserObject = {
       email: user.email,
@@ -19,6 +20,8 @@ module.exports.createSession = async function (req, res) {
       isVerified: user.isVerified,
 
     }
+    console.log("********", user);
+    console.log("********", filterUserObject);
     res.setHeader("Access-Control-Allow-Origin", "*");
     if (!user || user.password != req.body.password) {
       return res.status(422).json({
