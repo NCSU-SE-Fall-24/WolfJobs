@@ -5,10 +5,9 @@
   [![DOI](https://zenodo.org/badge/893284742.svg)](https://doi.org/10.5281/zenodo.14219525)
 </h1>
 
-test
 <h2 align="center">
 
-  [Link to Deployed Application]()
+  [Link to Deployed Application]<a href="http://3.140.72.169/" ></a>
 
 </h2>
 
