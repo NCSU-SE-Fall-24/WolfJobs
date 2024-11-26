@@ -21,11 +21,11 @@ module.exports.createSession = async function (req, res) {
     }
     res.setHeader("Access-Control-Allow-Origin", "*");
     if (!user || user.password != req.body.password) {
-      return res.json(422, {
+      return res.status(422).json({
         message: "Invalid username or password",
       });
     }
-    return res.json(200, {
+    return res.status(200).json({
       message: "Sign In Successful, here is your token, please keep it safe",
       data: {
         token: jwt.sign(filterUserObject, "wolfjobs", { expiresIn: 24 * 60 * 60 * 5 }),
@@ -368,7 +368,7 @@ module.exports.fetchApplication = async function (req, res) {
 
   //Whenever we want to send back JSON data
   res.set("Access-Control-Allow-Origin", "*");
-  return res.json(200, {
+  return res.status(200).json({
     message: "List of Applications",
 
     application: application,
