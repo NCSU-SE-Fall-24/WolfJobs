@@ -7,7 +7,7 @@
 
 <h2 align="center">
 
-  <a href="http://3.140.72.169/" [Link to Deployed Application] ></a>
+  [Link to Deployed Application](http://3.140.72.169/)
 
 </h2>
 
