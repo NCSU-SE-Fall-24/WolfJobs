@@ -135,10 +135,6 @@ At WolfJobs, it’s more than just work – it’s about becoming part of a vibr
 ### Review & Accept Applications
 ![Review Applications](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
 
-### Super Admin Panel
-![Super Admin Panel](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Admin.jpg)
-
-
 # Installation Instructions for Project Setup
 
 **Prerequisites:**
@@ -214,8 +210,8 @@ Other future related items can be found in [Issues section.](https://github.com/
 
   <table>
   <tr>
-    <td align="center"><a href="https://github.com/AShivan26"><img src="https://avatars.githubusercontent.com/u/178510047?s=400&u=c7cc2f2c8a53acac682eeac26f2eaf7c3c688daf&v=4" width="100px;" alt=""/><br /><b>Aniruddha Shivananda</b></a></td>
-    <td align="center"><a href="https://github.com/ishika2201"><img src="https://avatars.githubusercontent.com/u/97585000?v=4" width="100px;" alt=""/><br /><b>Ishika Gandhi</b></a><br /></td>
-    <td align="center"><a href="https://github.com/MarthalaSaiKavya"><img src="https://avatars.githubusercontent.com/u/55596496?v=4" width="100px;" alt=""/><br /><b>Sai Kavya Marthala</b></a><br /></td>
+    <td align="center"><a href="https://github.com/Kenil2211"> <br /><b>Kenil Patel</b></a></td>
+    <td align="center"><a href="https://github.com/mihir1372"><br /><b>Mihir Shah</b></a><br /></td>
+    <td align="center"><a href="https://github.com/jappurohit041"><br /><b>Jap Purohit</b></a><br /></td>
   </tr>
 </table>
