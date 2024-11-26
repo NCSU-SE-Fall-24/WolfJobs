@@ -5,8 +5,8 @@ on:
     branches: ["dev"]
 
 jobs:
-  build-deploy:
-    runs-on: self-hosted
+  build-deploy-backend:
+    runs-on: [self-hosted, linux, x64, backend]
 
     steps:
       - name: Checkout the repo
@@ -45,6 +45,10 @@ jobs:
         run: |
             pm2 start ./dist/bundle.js --name wolfjobs_backend
     
+  build-deploy-frontend:
+    needs: build-deploy-backend
+    runs-on: [self-hosted, linux, x64, frontend]
+    steps:
       - name: Install dependency for frontend
         working-directory: ./frontend
         run: |
