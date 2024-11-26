@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon index.js",
     "test": "mocha --recursive --exit",
-    "coverage": "nyc --reporter=html --reporter=text --reporter=json mocha --recursive --exit --timeout 10000"
+    "coverage": "nyc --reporter=html --reporter=text --reporter=json mocha --recursive --exit --timeout 10000",
+    "build": "npx esbuild index.js --bundle --platform=node --outfile=dist/bundle.js "
   },
   "keywords": [
     "Calorie",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
+    "esbuild": "^0.24.0",
     "eslint": "^8.1.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.26.1",
