@@ -49,6 +49,14 @@ jobs:
     needs: build-deploy-backend
     runs-on: [self-hosted, linux, x64, frontend]
     steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
       - name: Install dependency for frontend
         working-directory: ./frontend
         run: |
