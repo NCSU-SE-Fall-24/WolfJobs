@@ -5,6 +5,15 @@
   [![DOI](https://zenodo.org/badge/893284742.svg)](https://doi.org/10.5281/zenodo.14219525)
 </h1>
 
+<h2 align="center">
+
+  [Link to Deployed Application]()
+
+</h2>
+
+<div align="center">
+[![codecov](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs/graph/badge.svg?token=ZIlENavxph)](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs)
+</div>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml)
 [![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml)
