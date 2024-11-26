@@ -1,0 +1,53 @@
+name: Testing Schedule CI
+
+env:
+    MONGO_PASS: ${{ secrets.MONGO_PASS }}
+
+on:
+    schedule:
+        - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+      with:
+        ref: ${{ github.ref }}
+
+    - name: Set up Node.js 18x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: backend - install dependencies
+      working-directory: backend
+      run: npm install
+
+    - name: backend - Run the tests
+      working-directory: backend
+      run: npm run coverage
+
+    - name: frontend - install dependencies
+      working-directory: frontend
+      run: npm install
+
+    - name: frontend - Run the tests
+      working-directory: frontend
+      run: npm run coverage
+
+    - name: Upload backend coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        files: ./backend/coverage/coverage-final.json
+        flags: backend
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Upload frontend coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        files: ./frontend/coverage/coverage-final.json
+        flags: frontend
+        token: ${{ secrets.CODECOV_TOKEN }}
