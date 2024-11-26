@@ -12,10 +12,10 @@
 </h2>
 
 <div align="center">
+
 [![GitHub Workflow Status](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/deploy.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/deploy.yml)
 [![codecov](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs/graph/badge.svg?token=ZIlENavxph)](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs)
 [![Schedule Testing](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/schedule-testing.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/schedule-testing.yml)
-
 </div>
 
 
