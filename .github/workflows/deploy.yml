@@ -36,6 +36,6 @@ jobs:
       - name: Restart pm2
         working-directory: ./backend
         run: |
-            pm2 restart ./dist/bundle.js --name "wolfjobs_backend"
+            pm2 restart ../dist/bundle.js --name "wolfjobs_backend"
 
 
