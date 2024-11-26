@@ -32,7 +32,6 @@ const access = {
 }
 module.exports.checkPermission = async function (req, res, next)  {
     if (!("Authorization" in req.headers || "authorization" in req.headers) && access['open'].includes(req.originalUrl)) {
-        console.log('open')
         next()
     } else if (("Authorization" in req.headers || "authorization" in req.headers)) {
         const token = req.headers.authorization || req.headers.Authorization
