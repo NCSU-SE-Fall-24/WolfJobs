@@ -1,4 +1,4 @@
-name: npm-test-upload
+name: Deploy
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       - name: Use Node.js 18x
         uses: actions/setup-node@v3
         with:
-          node-version: 18x
+          node-version: 18
           cache: "npm"
 
       - name: Run install
