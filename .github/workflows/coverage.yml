@@ -14,10 +14,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js 16x
+    - name: Set up Node.js 18x
       uses: actions/setup-node@v1
       with:
-        node-version: 16.x
+        node-version: 18
 
     - name: backend - install dependencies
       working-directory: backend
