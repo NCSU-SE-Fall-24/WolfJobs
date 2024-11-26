@@ -17,21 +17,20 @@
 </div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-checker.yml)
-[![npm-build](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/SEGroup18/WolfJobs/actions/workflows/build-test-upload.yml)
+[![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-checker.yml)
+[![npm-build](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/build-test-upload.yml)
 [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![Issues](https://img.shields.io/badge/issues-8open-brightorange)](https://github.com/SEGroup18/WolfJobs/issues)
-[![Issues Closed](https://img.shields.io/badge/issues%20closed-7-brightgreen)](https://github.com/SEGroup18/WolfJobs/issues)
+[![Issues](https://img.shields.io/badge/issues-8open-brightorange)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
+[![Issues Closed](https://img.shields.io/badge/issues%20closed-7-brightgreen)](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 ![last commit](https://img.shields.io/badge/last%20commit-November%202024-blue)
-![Lines of Code](https://tokei.rs/b1/github/SEGroup18/WolfJobs?refresh=true)
-[![Repo-size](https://img.shields.io/github/repo-size/SEGroup18/WolfJobs)](https://GitHub.com/SEGroup18/WolfJobs/)
-[![file_count](https://img.shields.io/github/directory-file-count/SEGroup18/WolfJobs)](https://GitHub.com/SEGroup18/WolfJobs/)
-[![language_count](https://img.shields.io/github/languages/count/SEGroup18/WolfJobs)](https://GitHub.com/SEGroup18/WolfJobs/)
-[![Downloads](https://img.shields.io/github/downloads/SEGroup18/WolfJobs/total)](https://GitHub.com/SEGroup18/WolfJobs/)
-[![Top Language](https://img.shields.io/github/languages/top/SEGroup18/WolfJobs)](https://GitHub.com/SEGroup18/WolfJobs/)
+![Lines of Code](https://tokei.rs/b1/github/NCSU-SE-Fall-24/WolfJobs?refresh=true)
+[![Repo-size](https://img.shields.io/github/repo-size/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
+[![file_count](https://img.shields.io/github/directory-file-count/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
+[![language_count](https://img.shields.io/github/languages/count/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
+[![Downloads](https://img.shields.io/github/downloads/NCSU-SE-Fall-24/WolfJobs/total)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
+[![Top Language](https://img.shields.io/github/languages/top/NCSU-SE-Fall-24/WolfJobs)](https://GitHub.com/NCSU-SE-Fall-24/WolfJobs/)
 [![DOI](https://zenodo.org/badge/879419051.svg)](https://doi.org/10.5281/zenodo.14027438)
-[![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/SEGroup18/WolfJobs)
-[![codecov](https://codecov.io/gh/SEGroup18/WolfJobs/branch/integration_project_2/graph/badge.svg?token=WABN8HE0RR)](https://codecov.io/gh/SEGroup18/WolfJobs)
+[![Release](https://img.shields.io/github/v/release/NCSU-SE-Fall-24/wolfjobs)](https://gitHub.com/NCSU-SE-Fall-24/WolfJobs)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 
@@ -184,7 +183,7 @@ Your app is ready to be deployed!
 
 **5. Interview Appointment Scheduling📆** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
 
-Other future related items can be found in [Issues section.](https://github.com/SEGroup18/WolfJobs/issues)
+Other future related items can be found in [Issues section.](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 
 # Contributors
 
