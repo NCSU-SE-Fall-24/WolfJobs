@@ -67,19 +67,25 @@
  - Components & States
  - Mutliple UI Screens _flows_ for Student & Manager Roles
  - [https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs)
+ - Deployed On AWS Cloud
+ - Super Admin Panel Added  
+
 
 
 # Project Presentation Video
 
-[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw)
+[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw) 
 
 # About Us
 
 ![Banner](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Banner.png)
 
-Eager to dive into a side hustle or seize a full-time job opportunity? Look no further than WolfJobs. Our platform is the ultimate connector between recruiters in need of talent for both short-term and full-time roles and candidates seeking the freedom to choose. Dive in, earn your share, and opt out whenever you want – or stay on for a longer journey!
+Looking for a side hustle or your next big career move?
+Welcome to Wolf Jobs, your ultimate gateway to on-campus employment opportunities. Our platform bridges the gap between recruiters seeking skilled talent and students eager to explore flexible work options
 
-At the heart of our bustling campus, WolfJobs stands out as the top student employment portal. Whether you're on the hunt for a short-term tech project, a part-time shift at a campus dining hall, or a full-time position that offers stability and growth, WolfJobs has a spot just for you.
+Whether you’re interested in short-term gigs, part-time campus roles, or full-time positions that offer stability and growth, Wolf Jobs puts you in control. Choose when to join, earn while you learn, and step out whenever you're ready – or build a long-term path with us!
+
+Situated at the heart of campus life, Wolf Jobs is your trusted partner for diverse and rewarding student employment opportunities. From tech projects to dining shifts and beyond, there’s a place for everyone on our platform.
 
 # Why WolfJobs?
 
