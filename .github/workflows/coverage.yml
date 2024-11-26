@@ -1,0 +1,54 @@
+name: Code Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: backend - install dependencies
+      working-directory: backend
+      run: npm install
+
+    - name: backend - Run the tests
+      working-directory: backend
+      run: npm run coverage
+
+    - name: frontend - install dependencies
+      working-directory: frontend
+      run: npm install
+
+    - name: frontend - Run the tests
+      working-directory: frontend
+      run: npm run coverage
+
+    - name: Upload backend coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        files: ./backend/coverage/coverage-final.json
+        flags: backend
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Upload frontend coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        files: ./frontend/coverage/coverage-final.json
+        flags: frontend
+        token: ${{ secrets.CODECOV_TOKEN }}
