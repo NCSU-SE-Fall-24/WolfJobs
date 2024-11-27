@@ -8,7 +8,7 @@
     "test": "mocha --recursive --exit",
     "coverage": "nyc --reporter=html --reporter=text --reporter=json mocha --recursive --exit --timeout 10000",
     "build": "npx esbuild index.js --bundle --platform=node --outfile=dist/bundle.js",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "test_eslint": "npm run lint && npm run coverage"
   },
   "keywords": [
