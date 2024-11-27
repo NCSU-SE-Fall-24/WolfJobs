@@ -18,7 +18,7 @@
 [![codecov](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs/graph/badge.svg?token=ZIlENavxph)](https://codecov.io/github/NCSU-SE-Fall-24/WolfJobs)
 [![Schedule Testing](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/schedule-testing.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/schedule-testing.yml)
 [![Formatting NodeJS code](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/code_formatter.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/code_formatter.yml)
-[![Lint NodeJS Checker](https://github.com/NCSU-SE-Fall-24/WolfJobs/workflows/style_checker.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/style_checker.yml)
+[![Lint NodeJS Checker](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/style_checker.yml/badge.svg)](https://github.com/NCSU-SE-Fall-24/WolfJobs/actions/workflows/style_checker.yml)
 
 </div>
 
