@@ -7,7 +7,7 @@
 
 <h2 align="center">
 
-  [Link to Deployed Application]()
+  [Link to Deployed Application](http://3.140.72.169/)
 
 </h2>
 
@@ -73,31 +73,37 @@
  - Components & States
  - Mutliple UI Screens _flows_ for Student & Manager Roles
  - [https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs)
+ - Deployed On AWS Cloud
+ - Super Admin Panel Added  
+
 
 
 # Project Presentation Video
 
-[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw)
+[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw) 
 
 # About Us
 
 ![Banner](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Banner.png)
 
-Eager to dive into a side hustle or seize a full-time job opportunity? Look no further than WolfJobs. Our platform is the ultimate connector between recruiters in need of talent for both short-term and full-time roles and candidates seeking the freedom to choose. Dive in, earn your share, and opt out whenever you want – or stay on for a longer journey!
+Looking for a side hustle or your next big career move?
+Welcome to Wolf Jobs, your ultimate gateway to on-campus employment opportunities. Our platform bridges the gap between recruiters seeking skilled talent and students eager to explore flexible work options
 
-At the heart of our bustling campus, WolfJobs stands out as the top student employment portal. Whether you're on the hunt for a short-term tech project, a part-time shift at a campus dining hall, or a full-time position that offers stability and growth, WolfJobs has a spot just for you.
+Whether you’re interested in short-term gigs, part-time campus roles, or full-time positions that offer stability and growth, Wolf Jobs puts you in control. Choose when to join, earn while you learn, and step out whenever you're ready – or build a long-term path with us!
+
+Situated at the heart of campus life, Wolf Jobs is your trusted partner for diverse and rewarding student employment opportunities. From tech projects to dining shifts and beyond, there’s a place for everyone on our platform.
 
 # Why WolfJobs?
 
-At WolfJobs, it’s not just about work – it's about joining a vibrant pack where every wolf (err, student!) counts. Step in and find your howl!🐺🎉
+At WolfJobs, it’s more than just work – it’s about becoming part of a vibrant pack where every wolf (that’s you!) has a voice and a place to thrive. Step in, find your rhythm, and let your career journey begin with us! 🐺🎉
 
-- **Competitive & Rewarding:** As part of the WolfJobs family, we pride ourselves on offering competitive wages paired with flexible schedules. Your time is valuable, and we recognize that.
+- **Competitive & Rewarding:** As a member of the WolfJobs family, you’ll enjoy competitive wages and flexible schedules that fit your lifestyle. We understand your time is valuable, and we honor that by offering roles that respect your academic commitments while rewarding your hard work.
 
-- **Holistic Growth & Learning:** With our commitment to fostering a culture rich in learning and opportunity, every job position at WolfJobs paves the way for personal and professional growth.
+- **Holistic Growth & Learning:** At WolfJobs, every position is an opportunity for growth. We’re committed to creating a culture of learning, where each role not only advances your career but also nurtures your personal development. Join us, and embark on a journey of professional and personal transformation.
 
-- **A Confluence of Values:** Our foundation rests on unwavering values: integrity, respect for diversity, responsibility, stewardship, and relentless pursuit of excellence. Every job posted resonates with these ideals, ensuring a harmonious and enriching work environment.
+- **A Confluence of Values:** Our foundation is built on core values: integrity, respect for diversity, responsibility, stewardship, and the relentless pursuit of excellence. These ideals are reflected in every job posted, creating a workplace that is both supportive and empowering
 
-- **Inclusivity & Belonging:** At WolfJobs, every student is a valuable asset. Our emphasis on inclusion ensures that you're not just taking up a job; you're becoming a part of a diverse, dynamic community where your voice matters.
+- **Inclusivity & Belonging:** We believe every student brings unique value. At WolfJobs, diversity is our strength, and inclusivity is at our core. When you join our community, you’re not just taking on a job – you’re becoming a vital part of a dynamic and diverse team where your contributions are celebrated.
 
 # Application Preview:
 
@@ -134,7 +140,6 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ### Review & Accept Applications
 ![Review Applications](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
-
 
 # Installation Instructions for Project Setup
 
@@ -193,17 +198,33 @@ Your app is ready to be deployed!
 
 **3. Filtering System in Jobs List** - A filtering system was added in JobsListView, enabling users to filter job listings by type (all, full-time, part-time). This streamlined approach helps applicants locate relevant job types efficiently. Filter buttons are visually distinct, with the active filter highlighted, and useMemo is employed to optimize performance by updating the job list only when necessary.
 
+**4.Cloud Deployment** -  
+WolfJobs is now hosted on the cloud, ensuring seamless access, improved reliability, and scalability to support a growing user base.
+
+**5. Admin Panel Integration** -  
+We’ve implemented a dedicated Admin Panel for managers. This feature allows only authorized managers to post job listings, ensuring a secure and streamlined job posting process.
+
+**6. Email Service Integration** -  
+To enhance user experience, we’ve added an email notification system. Now, whenever a user signs up, they receive a welcome email, ensuring prompt communication and engagement from the very beginning..
+
+
 # Future Improvements✨
 
-**1. Email Service📧** - On getting selected/rejected to a job, the applicant should be getting an email about it.
+**1. Mobile Application Development** - 
+Launch a dedicated mobile app for WolfJobs to provide users with on-the-go access to job postings, notifications, and application tracking. This would increase engagement and accessibility.
 
 **2. Search jobs based on department📃** - There can be a different category searches for applicants when searching for the jobs. For instance, we can have search on basis of the departments.
 
+
+
 **3. Job Analysis🔍** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
 
-**4. Chatbot Integration🤖** – Our platform WolfJobs will also provide the functionality of Chatbot integrated with our website so that user can easily interact with the bot and get to know about various features of our web application and have a nice interactive experience.
+**4. Integration with Academic Portals** – 
+Integrate WolfJobs with university systems like academic records and calendars to create a seamless experience for job seekers and employers within the campus ecosystem.
 
 **5. Interview Appointment Scheduling📆** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
+
+**6. Expanded Job Categories:** - Include diverse job categories beyond campus-focused roles, such as remote internships, freelance projects, and research assistantships, broadening the scope of opportunities available to students
 
 Other future related items can be found in [Issues section.](https://github.com/NCSU-SE-Fall-24/WolfJobs/issues)
 
@@ -211,8 +232,8 @@ Other future related items can be found in [Issues section.](https://github.com/
 
   <table>
   <tr>
-    <td align="center"><a href="https://github.com/AShivan26"><img src="https://avatars.githubusercontent.com/u/178510047?s=400&u=c7cc2f2c8a53acac682eeac26f2eaf7c3c688daf&v=4" width="100px;" alt=""/><br /><b>Aniruddha Shivananda</b></a></td>
-    <td align="center"><a href="https://github.com/ishika2201"><img src="https://avatars.githubusercontent.com/u/97585000?v=4" width="100px;" alt=""/><br /><b>Ishika Gandhi</b></a><br /></td>
-    <td align="center"><a href="https://github.com/MarthalaSaiKavya"><img src="https://avatars.githubusercontent.com/u/55596496?v=4" width="100px;" alt=""/><br /><b>Sai Kavya Marthala</b></a><br /></td>
+    <td align="center"><a href="https://github.com/Kenil2211"> <br /><b>Kenil Patel</b></a></td>
+    <td align="center"><a href="https://github.com/mihir1372"><br /><b>Mihir Shah</b></a><br /></td>
+    <td align="center"><a href="https://github.com/jappurohit041"><br /><b>Jap Purohit</b></a><br /></td>
   </tr>
 </table>
