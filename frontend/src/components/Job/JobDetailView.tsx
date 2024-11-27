@@ -21,8 +21,8 @@ const JobDetailView = () => {
       if (job) {
         const jobSkills = job.skills;
         const userSkills = useUserStore.getState().skills;
-        const matchedSkills = jobSkills.filter((value) =>
-          userSkills.includes(value)
+        const matchedSkills = jobSkills?.filter((value) =>
+          userSkills?.includes(value)
         );
         setMatchedArray(matchedSkills);
 

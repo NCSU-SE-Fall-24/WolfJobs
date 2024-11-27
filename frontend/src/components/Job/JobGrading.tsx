@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useApplicationStore } from "../../store/ApplicationStore";
 import { Button } from "@mui/material";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useApplicationStore } from "../../store/ApplicationStore";
 
 const JobGrading = (props: any) => {
   const { jobData }: { jobData: Job } = props;
@@ -22,7 +22,7 @@ const JobGrading = (props: any) => {
   }, [searchParams]);
 
   const handleScoring = (applicationId: string, grade: string) => {
-    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: applicationId,

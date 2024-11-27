@@ -35,7 +35,7 @@ const LoginPage = () => {
     console.log(data);
     if(data.email === "admin@admin.com" && data.password === "password")
     {
-      login(data.email, data.password, navigate("/add_manager"))
+      login(data.email, data.password, navigate)
     }
     else{
       login(data.email, data.password, navigate);

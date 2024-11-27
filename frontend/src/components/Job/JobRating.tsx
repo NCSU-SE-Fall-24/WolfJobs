@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useApplicationStore } from "../../store/ApplicationStore";
-import axios from "axios";
-import { toast } from "react-toastify";
 import { Button } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useApplicationStore } from "../../store/ApplicationStore";
 
 const JobRating = (props: any) => {
   const { jobData }: { jobData: Job } = props;
@@ -21,7 +21,7 @@ const JobRating = (props: any) => {
   }, [searchParams]);
 
   const handleAccept = (applicantid: string) => {
-    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: applicantid,
@@ -38,7 +38,7 @@ const JobRating = (props: any) => {
     });
   };
   const handleReject = (applicantid: string) => {
-    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: applicantid,

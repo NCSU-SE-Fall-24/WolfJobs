@@ -11,7 +11,8 @@ const jobSchema = new mongoose.Schema({
   },
   managerAffilication: {
     type: String,
-    required: true,
+    default: 'nc-state-dining',
+    // required: true,
   },
   status: {
     type: String,
@@ -19,7 +20,7 @@ const jobSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: true,
+    // required: true,
   },
   skills: {
     type: [String],
@@ -27,7 +28,7 @@ const jobSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
+    // required: true,
   },
   pay: {
     type: String,
@@ -35,7 +36,7 @@ const jobSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    required: true,
+    // required: true,
   },
   question1: {
     type: String,

@@ -178,9 +178,9 @@ const RegistrationPage = () => {
                   <MenuItem value={"Manager"}>Manager</MenuItem>
                   <MenuItem value={"Applicant"}>Applicant</MenuItem>
                 </Select>
-              </FormControl> */}
+              </FormControl>
               
-              {/* {
+              {
                 role === "Manager" && (
                   <FormControl>
                     <InputLabel id="affiliation-id">Role</InputLabel>

@@ -2,13 +2,13 @@ import axios from "axios";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUserStore } from "../../store/UserStore";
 import { toast } from "react-toastify";
+import { useUserStore } from "../../store/UserStore";
 
-import JobsListView from "../../components/Job/JobListView";
 import JobDetailView from "../../components/Job/JobDetailView";
-import { useJobStore } from "../../store/JobStore";
+import JobsListView from "../../components/Job/JobListView";
 import { useApplicationStore } from "../../store/ApplicationStore";
+import { useJobStore } from "../../store/JobStore";
 
 const Explore = () => {
   const naviagte = useNavigate();
@@ -64,7 +64,7 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/fetchapplications")
+      .get("http://localhost:8000/api/v1/users/fetchapplications")
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Error fetching applications");
@@ -74,8 +74,11 @@ const Explore = () => {
       });
 
     axios
-      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users", {
+      .get("http://localhost:8000/api/v1/users/getJobs", {
         params: { page: 1, limit: 25 },
+        headers:{
+          Authorization:localStorage.getItem('token')
+        }
       })
       .then((res) => {
         if (res.status !== 200) {

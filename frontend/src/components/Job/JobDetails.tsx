@@ -1,13 +1,12 @@
+import { Button, Stack, TextField } from "@mui/material";
 import axios from "axios";
-import { useUserStore } from "../../store/UserStore";
-import { useForm } from "react-hook-form";
-import { Button } from "@mui/material";
-import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useApplicationStore } from "../../store/ApplicationStore";
-import { Stack, TextField } from "@mui/material";
-import JobManagerView from "./JobManagerView";
+import { useUserStore } from "../../store/UserStore";
 import "./Job.css";
+import JobManagerView from "./JobManagerView";
 
 type FormValues = {
   answer1: string;
@@ -104,7 +103,7 @@ const JobDetail = (props: any) => {
     };
 
     axios
-      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createapplication", body)
+      .post("http://localhost:8000/api/v1/users/createapplication", body)
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Failed to apply");
@@ -116,7 +115,7 @@ const JobDetail = (props: any) => {
   };
 
   const handleAnswerQuestionnaire = (data: FormValues) => {
-    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: application?._id,

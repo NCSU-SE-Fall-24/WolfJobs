@@ -18,6 +18,7 @@ module.exports.createSession = async function(req, res) {
       role: user.role,
       id: user._id,
       isVerified: user.isVerified,
+      _id: user._id,
 
     };
     console.log('********', user);
@@ -46,6 +47,8 @@ module.exports.createSession = async function(req, res) {
 
 module.exports.signUp = async function(req, res) {
   try {
+    console.log('jiiiiii');
+
     if (req.body.password != req.body.confirm_password) {
       return res.json(422, {
         message: 'Passwords do not match',
@@ -75,6 +78,8 @@ module.exports.signUp = async function(req, res) {
 
         User.create(req.body, function(err, user) {
           if (err) {
+            console.log(err);
+
             return res.json(500, {
               message: 'Internal Server Error',
             });
@@ -211,10 +216,11 @@ module.exports.searchUser = async function(req, res) {
 
 
 module.exports.createJob = async function(req, res) {
+  console.log('body', req.body);
   const user = await User.findOne({_id: req.body.id});
   console.log('Incoming skills:', req.body.skills);
-
-  const skills = req.body.skills ? req.body.skills.split(',').map((skill) => skill.trim()) : []; // Split skills string into an array
+  console.log(user);
+  // const skills = req.body.skills ? req.body.skills.split(',').map((skill) => skill.trim()) : []; // Split skills string into an array
   check = req.body.skills;
   try {
     const job = await Job.create({
@@ -223,7 +229,7 @@ module.exports.createJob = async function(req, res) {
       managerAffilication: user.affiliation,
       type: req.body.type,
       location: req.body.location,
-      skills: skills,
+      skills: '',
       description: req.body.description,
       pay: req.body.pay,
       question1: req.body.question1,
@@ -307,6 +313,18 @@ module.exports.fetchApplication = async function(req, res) {
     message: 'List of Applications',
 
     application: application,
+  });
+};
+
+module.exports.getJobs = async function(req, res) {
+  const jobs = await Job.find({}).sort('-createdAt');
+
+  // Whenever we want to send back JSON data
+  res.set('Access-Control-Allow-Origin', '*');
+  return res.json(200, {
+    message: 'List of jobs',
+
+    jobs: jobs,
   });
 };
 

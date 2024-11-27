@@ -6,7 +6,12 @@ const access = {
     '/api/v1/users/getprofile/:id',
     '/api/v1/users/search/:name',
     '/api/v1/users/createjob',
-    '/api/v1/users/',
+    '/api/v1/users/getUsers',
+
+    '/api/v1/users/getJobs',
+    '/api/v1/users/createUser',
+    '/api/v1/users/updateUser',
+    '/api/v1/users/deleteUser',
     '/api/v1/users/:id',
     'api/v1/users/fetchapplications',
     'api/v1/users/acceptapplication',
@@ -24,6 +29,10 @@ const access = {
     'api/v1/users/save',
     'api/v1/users/generateOTP',
     'api/v1/users/verifyOTP',
+    '/api/v1/users/getJobs',
+    '/api/v1/users/createUser',
+    '/api/v1/users/updateUser',
+    '/api/v1/users/deleteUser',
   ],
   'open': [
     '/api/v1/users/create-session',
@@ -31,13 +40,15 @@ const access = {
   ],
 };
 module.exports.checkPermission = async function(req, res, next) {
-  if (!('Authorization' in req.headers || 'authorization' in req.headers) && access['open'].includes(req.originalUrl)) {
+  const path = req.baseUrl + req.path;
+  if (!('Authorization' in req.headers || 'authorization' in req.headers) && access['open'].includes(path)) {
     next();
   } else if (('Authorization' in req.headers || 'authorization' in req.headers)) {
+    console.log('Insider', path);
     const token = req.headers.authorization || req.headers.Authorization;
     const user = await jwt.verify(token.replace('Bearer ', ''), 'wolfjobs');
-    console.log(user);
-    if (access[user.role].includes(req.originalUrl)) {
+    console.log(user, path, access[user.role].includes(path));
+    if (access[user.role].includes(path) ) {
       next();
     } else {
       res.status(403).json({

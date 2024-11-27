@@ -1,20 +1,20 @@
 import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Stack,
-  TextField,
+    Button,
+    FormControl,
+    InputLabel,
+    MenuItem,
+    Select,
+    SelectChangeEvent,
+    Stack,
+    TextField,
 } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
-import { useUserStore } from "../../store/UserStore";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { login } from "../../deprecateded/auth";
+import { useUserStore } from "../../store/UserStore";
 
 type FormValues = {
   name: string;
@@ -67,7 +67,7 @@ const ProfileEdit = ({ props }: { props: any }) => {
   const { errors } = formState;
 
   const handleSaveProfile = (data: FormValues) => {
-    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/edit";
+    const url = "http://localhost:8000/api/v1/users/edit";
     const body = {
       id: userId,
       name: data.name,

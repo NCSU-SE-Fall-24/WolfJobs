@@ -24,7 +24,7 @@ interface Application {
 
 // Helper function to get affiliation tag
 const getAffiliationTag = (tag?: string): string => {
-  return tag ? tag.split("-").join(" ").toUpperCase() : "UNKNOWN AFFILIATION";
+  return tag ? tag.split("-").join(" ").toUpperCase() : "NC STATE DINING";
 };
 
 const JobListTile = ({ data }: { data: Job }) => {

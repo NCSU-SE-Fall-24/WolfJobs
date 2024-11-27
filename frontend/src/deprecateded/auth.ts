@@ -14,8 +14,13 @@ export async function login(email: string, password: string, navigate: any) {
     .then((res) => res.json())
     .then((data) => {
       if (data.success) {
-        localStorage.setItem("token", data.data.token);
-        navigate("/dashboard");
+        localStorage.setItem("token", data?.data?.token);
+        localStorage.setItem("uid",data?.data?.user.id)
+        if (email === "admin@admin.com") {
+          navigate("/add_manager")
+        } else {
+          navigate("/dashboard");
+        }
         return;
       }
       toast.error("Login Failed");
@@ -55,7 +60,7 @@ export function signup(
         navigate("/dashboard");
         return;
       }
-      
+
       toast.error("Sign up Failed");
     });
 }

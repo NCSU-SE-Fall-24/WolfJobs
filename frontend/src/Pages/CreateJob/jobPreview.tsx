@@ -1,12 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useUserStore } from "../../store/UserStore";
 import { Button } from "@mui/material";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { useEffect } from "react";
 import axios from "axios";
+import { useEffect } from "react";
+import { AiFillCheckCircle } from "react-icons/ai";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { s } from "vitest/dist/reporters-5f784f42.js";
+import { useUserStore } from "../../store/UserStore";
 
 type FormValuesQuestions = {
   question1: string;
@@ -38,10 +36,16 @@ const JobPreview = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
+    // console.log("bff",useUserStore(state));
+    
+    // const url = `http://localhost:8000/api/v1/users/createjob`;
+    const url= "http://localhost:8000/api/v1/users/createjob"
+    // console.log("iddd--",userId);
+    
+    
 
-    const url = `http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createjob`;
     const body = {
-      id: userId,
+      id: localStorage.getItem('uid'),
       name: details.role,
       type: details.jobtype,
       location: details.location,
@@ -54,7 +58,12 @@ const JobPreview = () => {
       question4: questions.question4,
     };
 
-    axios.post(url, body).then((res) => {
+    
+    axios.post(url, body, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }).then((res) => {
       if (res.status !== 200) {
         toast.error("Job posting failed");
         return;

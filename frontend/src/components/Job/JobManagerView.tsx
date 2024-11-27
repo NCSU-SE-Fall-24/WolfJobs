@@ -1,13 +1,13 @@
 import { Button } from "@mui/material";
-import { useUserStore } from "../../store/UserStore";
-import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import JobScreening from "./JobScreening";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useUserStore } from "../../store/UserStore";
+import JobFinalReview from "./JobFinalReview";
 import JobGrading from "./JobGrading";
 import JobRating from "./JobRating";
-import JobFinalReview from "./JobFinalReview";
-import { toast } from "react-toastify";
+import JobScreening from "./JobScreening";
 
 const JobManagerView = (props: any) => {
   const { jobData }: { jobData: Job } = props;
@@ -31,7 +31,7 @@ const JobManagerView = (props: any) => {
     };
 
     axios
-      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/closejob", body)
+      .post("http://localhost:8000/api/v1/users/closejob", body)
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Failed to apply");

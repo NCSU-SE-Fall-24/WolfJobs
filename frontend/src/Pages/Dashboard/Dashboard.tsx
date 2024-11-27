@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import JobDetailView from "../../components/Job/JobDetailView";
-import axios from "axios";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { useUserStore } from "../../store/UserStore";
-import { useJobStore } from "../../store/JobStore";
-import { useApplicationStore } from "../../store/ApplicationStore";
-import JobListTile from "../../components/Job/JobListTile";
 import { Button } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import JobDetailView from "../../components/Job/JobDetailView";
+import JobListTile from "../../components/Job/JobListTile";
+import { useApplicationStore } from "../../store/ApplicationStore";
+import { useJobStore } from "../../store/JobStore";
+import { useUserStore } from "../../store/UserStore";
 
 const Dashboard = () => {
   const naviagte = useNavigate();
@@ -69,31 +69,38 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/fetchapplications")
+      .get("http://localhost:8000/api/v1/users/fetchapplications")
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Error fetching applications");
           return;
         }
-        updateApplicationList(res.data.application as Application[]);
+        
+        // console.log("apppss",res.data?.data);
+          
+        updateApplicationList(res.data?.application as Application[]);
       });
 
     axios
-      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users", {
+      .get("http://localhost:8000/api/v1/users/getJobs", {
         params: { page: 1, limit: 25 },
+        headers: {
+          'Authorization': localStorage.getItem('token') || 'jap'
+        }
       })
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Error fetching jobs");
           return;
         }
+        console.log("apppss",res.data?.jobs);
         updateJobList(res.data.jobs as Job[]);
       });
   }, []);
 
   useEffect(() => {
     if (role === "Manager") {
-      const temp = jobList.filter((item) => {
+      const temp = jobList?.filter((item) => {
         return item.managerid === managerId;
       });
       setDisplayList(temp);
@@ -106,7 +113,7 @@ const Dashboard = () => {
         const id = applicantsJobs[i]?.jobid || "";
         ids.push(id);
       }
-      const temp = jobList.filter((item) => ids.includes(item._id));
+      const temp = jobList?.filter((item) => ids.includes(item._id));
       setDisplayList(temp);
     }
   }, [role, jobList, applicationList]);

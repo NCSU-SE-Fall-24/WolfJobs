@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema(
       },
       affiliation: {
         type: String,
-        default: '',
+        default: 'nc-state-dining',
       },
       skills: {
         type: [String],
