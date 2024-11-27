@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const applicationSchema = new mongoose.Schema({
   jobname: {
@@ -7,16 +7,16 @@ const applicationSchema = new mongoose.Schema({
   },
   applicantid: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
   applicantname: {
     type: String,
     required: true,
-    default: "",
+    default: '',
   },
   applicantemail: {
     type: String,
-    default: "",
+    default: '',
   },
   applicantskills: {
     type: [String],
@@ -24,58 +24,58 @@ const applicationSchema = new mongoose.Schema({
   },
   phonenumber: {
     type: String,
-    default: "",
+    default: '',
   },
   managerid: {
     type: String,
-    default: "",
+    default: '',
   },
   address: {
     type: String,
-    default: "",
+    default: '',
   },
   hours: {
     type: String,
-    default: "",
+    default: '',
   },
   dob: {
     type: String,
-    default: "",
+    default: '',
   },
   gender: {
     type: String,
-    default: "",
+    default: '',
   },
   status: {
     type: String,
-    default: "applied",
+    default: 'applied',
   },
   jobid: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Job",
+    ref: 'Job',
   },
   answer1: {
     type: String,
-    default: "",
+    default: '',
   },
   answer2: {
     type: String,
-    default: "",
+    default: '',
   },
   answer3: {
     type: String,
-    default: "",
+    default: '',
   },
   answer4: {
     type: String,
-    default: "",
+    default: '',
   },
   rating: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
-const Application = mongoose.model("Application", applicationSchema);
+const Application = mongoose.model('Application', applicationSchema);
 
 module.exports = Application;
