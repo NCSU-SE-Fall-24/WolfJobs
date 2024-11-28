@@ -30,7 +30,11 @@ const JobScreening = (props: any) => {
       status: "screening",
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body, {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Accepted candidate");
         location.reload();
@@ -48,7 +52,11 @@ const JobScreening = (props: any) => {
       status: "rejected",
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body, {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Rejected candidate");
         location.reload();

@@ -12,6 +12,7 @@ module.exports.createSession = async function(req, res) {
   try {
     console.log('********', req.body);
     const user = await User.findOne({email: req.body.email});
+    console.log(user)
     const filterUserObject = {
       email: user.email,
       name: user.name,

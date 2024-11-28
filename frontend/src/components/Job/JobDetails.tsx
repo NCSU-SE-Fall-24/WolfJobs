@@ -103,7 +103,11 @@ const JobDetail = (props: any) => {
     };
 
     axios
-      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createapplication", body)
+      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createapplication", body, {
+        headers:{
+          Authorization:localStorage.getItem('token')
+        }}
+      )
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Failed to apply");
@@ -111,6 +115,7 @@ const JobDetail = (props: any) => {
         }
         location.reload();
         toast.success("Applied successfully");
+        toast.success("Email Sent successfully")
       });
   };
 
@@ -126,7 +131,11 @@ const JobDetail = (props: any) => {
       answer4: data.answer4,
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body, {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Accepted candidate");
         location.reload();

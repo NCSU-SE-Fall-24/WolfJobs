@@ -69,7 +69,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/fetchapplications")
+      .get("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/fetchapplications" , {
+        headers:{
+          Authorization:localStorage.getItem('token')
+        }
+      })
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Error fetching applications");

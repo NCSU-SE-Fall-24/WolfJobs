@@ -149,13 +149,13 @@
 
 
 
-import React, { useState, useEffect } from 'react';
-import { Box, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 import Paper from '@mui/material/Paper';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 // Define the type for a row
@@ -177,7 +177,7 @@ export const SuperAdminPage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users', {
+                const response = await axios.get('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/getUsers', {
                     headers: {
                         Authorization: `Bearer ${authToken}`,
                     },
@@ -201,7 +201,7 @@ export const SuperAdminPage = () => {
     }
     // Add user handler
     const handleAddUser = async () => {
-        await axios.post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users", {
+        await axios.post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createUser", {
             "email": formData.email,
             "password": "temp-pass",
             "name": formData.name,

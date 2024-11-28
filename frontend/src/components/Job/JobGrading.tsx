@@ -30,7 +30,11 @@ const JobGrading = (props: any) => {
       rating: grade,
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body, {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Rejected candidate");
         location.reload();

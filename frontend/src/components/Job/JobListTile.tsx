@@ -35,7 +35,7 @@ const JobListTile = ({ data }: { data: Job }) => {
 
   const userId = useUserStore((state) => state.id);
   const userRole = useUserStore((state) => state.role);
-  
+
   const applicationList = useApplicationStore((state) => state.applicationList);
 
   // Find application for the current job and user
@@ -85,12 +85,20 @@ const JobListTile = ({ data }: { data: Job }) => {
     try {
       if (isJobSaved) {
         // Unsave job
-        await axios.delete(saveJobURL, { data: { jobId: data._id, userId } });
+        await axios.delete(saveJobURL, {
+          data: { jobId: data._id, userId }, headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        });
         setIsJobSaved(false);
         toast.info("Job unsaved.");
       } else {
         // Save job
-        await axios.post(saveJobURL, { jobId: data._id, userId });
+        await axios.post(saveJobURL, { jobId: data._id, userId }, {
+          headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        });
         setIsJobSaved(true);
         toast.success("Job saved successfully!");
       }
@@ -140,7 +148,7 @@ const JobListTile = ({ data }: { data: Job }) => {
             <p className="text-3xl">{data.pay || "0"}$/hr</p>
 
             {/* Save/Unsave button */}
-            <button 
+            <button
               className="ml-4 inline-flex items-center text-black cursor-pointer"
               onClick={handleSaveJob}
             >

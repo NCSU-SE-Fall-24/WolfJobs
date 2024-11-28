@@ -2,10 +2,10 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUserStore } from "../../store/UserStore";
 import { toast } from "react-toastify";
 import { saveJobURL } from "../../api/constants";
 import SaveJobListView from "../../components/SaveJob/SaveJobListView";
+import { useUserStore } from "../../store/UserStore";
 
 const SaveJobs = () => {
   const naviagte = useNavigate();
@@ -54,6 +54,10 @@ const SaveJobs = () => {
         try {
           const response = await axios.post(saveJobURL, {
             userId, 
+          }, {
+            headers: {
+              Authorization: localStorage.getItem('token')
+            }
           });
           
           const savedJobs = response.data.data; 

@@ -28,7 +28,11 @@ const JobRating = (props: any) => {
       status: "accepted",
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body , {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Accepted candidate");
         location.reload();
@@ -45,7 +49,11 @@ const JobRating = (props: any) => {
       status: "rejected",
     };
 
-    axios.post(url, body).then((res) => {
+    axios.post(url, body, {
+      headers:{
+       Authorization:localStorage.getItem('token')
+     }
+   }).then((res) => {
       if (res.status == 200) {
         toast.success("Rejected candidate");
         location.reload();
