@@ -31,7 +31,7 @@ const JobManagerView = (props: any) => {
     };
 
     axios
-      .post("http://localhost:8000/api/v1/users/closejob", body)
+      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/closejob", body)
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Failed to apply");

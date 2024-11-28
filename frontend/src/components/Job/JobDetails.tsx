@@ -103,7 +103,7 @@ const JobDetail = (props: any) => {
     };
 
     axios
-      .post("http://localhost:8000/api/v1/users/createapplication", body)
+      .post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/createapplication", body)
       .then((res) => {
         if (res.status !== 200) {
           toast.error("Failed to apply");
@@ -115,7 +115,7 @@ const JobDetail = (props: any) => {
   };
 
   const handleAnswerQuestionnaire = (data: FormValues) => {
-    const url = "http://localhost:8000/api/v1/users/modifyApplication";
+    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: application?._id,

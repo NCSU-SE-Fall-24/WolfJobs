@@ -23,7 +23,7 @@ const JobScreening = (props: any) => {
   }, [searchParams]);
 
   const handleAccept = (applicationId: string) => {
-    const url = "http://localhost:8000/api/v1/users/modifyApplication";
+    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: applicationId,
@@ -41,7 +41,7 @@ const JobScreening = (props: any) => {
     });
   };
   const handleReject = (applicationId: string) => {
-    const url = "http://localhost:8000/api/v1/users/modifyApplication";
+    const url = "http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/modifyApplication";
 
     const body = {
       applicationId: applicationId,

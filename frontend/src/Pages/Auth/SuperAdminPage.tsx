@@ -18,7 +18,7 @@
 // useEffect(() => {
 //     const fetchUsers = async () => {
 //         try {
-//             const response = await axios.get('http://localhost:8000/api/v1/users', {
+//             const response = await axios.get('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users', {
 //                 headers: {
 //                     Authorization: `Bearer ${authToken}`,
 //                 },
@@ -177,7 +177,7 @@ export const SuperAdminPage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v1/users', {
+                const response = await axios.get('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users', {
                     headers: {
                         Authorization: `Bearer ${authToken}`,
                     },
@@ -201,7 +201,7 @@ export const SuperAdminPage = () => {
     }
     // Add user handler
     const handleAddUser = async () => {
-        await axios.post("http://localhost:8000/api/v1/users", {
+        await axios.post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users", {
             "email": formData.email,
             "password": "temp-pass",
             "name": formData.name,
@@ -222,7 +222,7 @@ export const SuperAdminPage = () => {
         setOpen(false); // Close the dialog
         setFormData({ name: '', email: '' });
 
-//         await axios.post("http://localhost:8000/api/v1/users/mail",
+//         await axios.post("http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000/api/v1/users/mail",
 //             {
 //                 "to": formData.email,
 //                 "subject": "Access to WOLFJOBS Portal for Job Postings",

@@ -95,7 +95,7 @@ describe('Manager APIs', () => {
 
   it('get-profile should run successfully', async () => {
     const token = (await createSession()).body.data.token;
-    const res = await chai.request('http://localhost:8000').get('/api/v1/users/getprofile/6742437b7ac6976625692013').set('authorization', token).send();
+    const res = await chai.request('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000').get('/api/v1/users/getprofile/6742437b7ac6976625692013').set('authorization', token).send();
     res.should.have.status(200);
     res.should.be.json;
     // res.body.data.should.have.property('user');
@@ -103,7 +103,7 @@ describe('Manager APIs', () => {
 
   it('get-Users should run successfully', async () => {
     const token = (await createSession()).body.data.token;
-    const res = await chai.request('http://localhost:8000').get('/api/v1/users/getUsers').set('authorization', token).send();
+    const res = await chai.request('http://ec2-18-118-238-67.us-east-2.compute.amazonaws.com:8000').get('/api/v1/users/getUsers').set('authorization', token).send();
     res.should.have.status(200);
   });
 });
