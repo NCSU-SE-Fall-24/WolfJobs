@@ -32,7 +32,7 @@ exports.checkPermission = (permission) =>{
     } else if (('Authorization' in req.headers || 'authorization' in req.headers)) {
       const token = req.headers.authorization || req.headers.Authorization;
       const user = await jwt.verify(token.replace('Bearer ', ''), 'wolfjobs');
-      console.log(user)
+      console.log(user);
       if (access[permission].includes(user.role) ) {
         next();
       } else {
