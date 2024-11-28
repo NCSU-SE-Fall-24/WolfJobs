@@ -79,8 +79,7 @@
 
 
 # Project Presentation Video
-
-[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw) 
+https://github.com/user-attachments/assets/ed740978-2a4e-4f4b-95c5-1071969de4d1
 
 # About Us
 
